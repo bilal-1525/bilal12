@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Clifton Fresh Farmers Market</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body data-shop="clifton">
+
+<header class="navbar">
+
+    <div class="logo">
+        🥬 <span>FreshFind</span>
+    </div>
+
+    <nav class="navbar">
+
+        <a href="fresh find 1.html" class="active">home</a>
+        <a href="find.html">Find a Market</a>
+        <a href="seasonal.html">Seasonal Recommendation</a>
+       
+        
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About us</a>
+
+
+    </nav>
+
+
+    <button class="cart-button" onclick="openCart()">
+        🛒 Cart
+        <span id="cartCount">0</span>
+    </button>
+
+</header>
+
+
+<section class="shop-hero">
+
+    <div>
+
+        <span class="badge">🌱 Fresh Local Produce</span>
+
+        <h1 id="shopName">
+            Clifton Fresh Farmers Market
+        </h1>
+
+        <p id="shopDescription">
+            Fresh vegetables and seasonal produce from local farmers.
+        </p>
+
+        <div class="shop-info">
+
+            <span>📍 Clifton Block 5, Karachi</span>
+
+            <span>🕐 8:00 AM - 2:00 PM</span>
+
+            <span>⭐ 4.8</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<main class="container">
+
+    <div class="page-heading">
+
+        <div>
+            <h2>Fresh Vegetables</h2>
+            <p>Choose fresh produce and add it to your cart.</p>
+        </div>
+
+        <div class="search-area">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search vegetables..."
+            >
+
+            <select id="categoryFilter">
+
+                <option value="all">
+                    All Categories
+                </option>
+
+                <option value="vegetable">
+                    Vegetables
+                </option>
+
+                <option value="leafy">
+                    Leafy Greens
+                </option>
+
+                <option value="root">
+                    Root Vegetables
+                </option>
+
+            </select>
+
+        </div>
+
+    </div>
+
+
+    <div
+        class="products-grid"
+        id="productsGrid">
+    </div>
+
+</main>
+
+
+<!-- CART SIDEBAR -->
+
+<div class="overlay" id="overlay" onclick="closeCart()"></div>
+
+<aside class="cart-sidebar" id="cartSidebar">
+
+    <div class="cart-header">
+
+        <h2>🛒 Your Cart</h2>
+
+        <button onclick="closeCart()">×</button>
+
+    </div>
+
+    <div id="cartItems"></div>
+
+    <div class="cart-footer">
+
+        <div class="total-row">
+            <strong>Total</strong>
+            <strong>
+                Rs. <span id="cartTotal">0</span>
+            </strong>
+        </div>
+
+        <button class="checkout-btn">
+            Proceed to Checkout
+        </button>
+
+    </div>
+
+</aside>
+
+
+<script src="script.js"></script>
+<script src="chatbot.js"></script>
+
+
+</body>
+</html>
