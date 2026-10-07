@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>DHA Green Market</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+
+<body data-shop="dha">
+
+<header class="navbar">
+
+    <div class="logo">
+        🥬 <span>FreshFind</span>
+    </div>
+
+        <nav class="navbar">
+
+        <a href="fresh find 1.html" class="active">home</a>
+        <a href="find.html">Find a Market</a>
+        <a href="seasonal.html">Seasonal Recommendation</a>
+       
+        
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About us</a>
+
+
+    </nav>
+
+
+
+    <button
+        class="cart-button"
+        onclick="openCart()">
+
+        🛒 Cart
+
+        <span id="cartCount">
+            0
+        </span>
+
+    </button>
+
+</header>
+
+
+<section class="shop-hero">
+
+    <div>
+
+        <span class="badge">
+            🌱 Fresh Local Produce
+        </span>
+
+        <h1>
+            DHA Green Market
+        </h1>
+
+        <p>
+            Farm-fresh vegetables, herbs and organic produce.
+        </p>
+
+        <div class="shop-info">
+
+            <span>
+                📍 DHA Phase 6, Karachi
+            </span>
+
+            <span>
+                🕐 7:00 AM - 1:00 PM
+            </span>
+
+            <span>
+                ⭐ 4.7
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<main class="container">
+
+    <div class="page-heading">
+
+        <div>
+
+            <h2>
+                Fresh Vegetables
+            </h2>
+
+            <p>
+                Select your vegetables and add them to your cart.
+            </p>
+
+        </div>
+
+        <div class="search-area">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search vegetables...">
+
+            <select id="categoryFilter">
+
+                <option value="all">
+                    All Categories
+                </option>
+
+                <option value="vegetable">
+                    Vegetables
+                </option>
+
+                <option value="leafy">
+                    Leafy Greens
+                </option>
+
+                <option value="root">
+                    Root Vegetables
+                </option>
+
+            </select>
+
+        </div>
+
+    </div>
+
+
+    <div
+        class="products-grid"
+        id="productsGrid">
+    </div>
+
+</main>
+
+
+<div
+    class="overlay"
+    id="overlay"
+    onclick="closeCart()">
+</div>
+
+
+<aside
+    class="cart-sidebar"
+    id="cartSidebar">
+
+    <div class="cart-header">
+
+        <h2>🛒 Your Cart</h2>
+
+        <button onclick="closeCart()">
+            ×
+        </button>
+
+    </div>
+
+    <div id="cartItems"></div>
+
+    <div class="cart-footer">
+
+        <div class="total-row">
+
+            <strong>
+                Total
+            </strong>
+
+            <strong>
+                Rs. <span id="cartTotal">0</span>
+            </strong>
+
+        </div>
+
+        <button class="checkout-btn">
+            Proceed to Checkout
+        </button>
+
+    </div>
+
+</aside>
+
+
+<script src="script.js"></script>
+<script src="chatbot.js"></script>
+
+</body>
+</html>

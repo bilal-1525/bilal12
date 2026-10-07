@@ -1,0 +1,2318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>FreshFind - Find a Market</title>
+
+
+    <style>
+
+        /* ==========================================
+           GLOBAL
+        ========================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --green: #18794e;
+            --dark-green: #0d5134;
+            --light-green: #eaf7ef;
+            --lime: #dff3df;
+            --orange: #f59e0b;
+            --dark: #173126;
+            --gray: #68756e;
+            --light: #f7faf8;
+            --white: #ffffff;
+            --border: #dfe9e3;
+            --shadow: 0 10px 30px rgba(25, 70, 45, 0.09);
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f7faf8;
+            color: var(--dark);
+        }
+
+
+        /* ==========================================
+           HEADER
+        ========================================== */
+
+        .header {
+            width: 90%;
+            max-width: 1250px;
+            margin: auto;
+
+            min-height: 105px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 30px;
+        }
+
+
+        /* ==========================================
+           LOGO
+        ========================================== */
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            min-width: 230px;
+        }
+
+        .logo-icon {
+            color: #4c9a70;
+            font-size: 35px;
+            transform: rotate(-15deg);
+        }
+
+        .logo h2 {
+            font-size: 29px;
+            line-height: 1;
+            color: #24525a;
+        }
+
+        .logo p {
+            font-size: 9px;
+            color: #6d8585;
+            margin-top: 5px;
+        }
+
+
+        /* ==========================================
+           HEADER SEARCH
+        ========================================== */
+
+        .header .search-box {
+            width: 390px;
+            height: 45px;
+
+            border: 1px solid #d9dfdd;
+            border-radius: 30px;
+
+            display: flex;
+            align-items: center;
+
+            padding: 0 18px;
+
+            color: #78908e;
+        }
+
+        .header .search-box i {
+            margin-right: 10px;
+        }
+
+        .header .search-box input {
+            width: 100%;
+            border: none;
+            outline: none;
+
+            font-family: inherit;
+            font-size: 12px;
+        }
+
+
+        /* ==========================================
+           HEADER RIGHT
+        ========================================== */
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .account {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            font-size: 11px;
+            color: #34595a;
+        }
+
+        .cart {
+            font-size: 21px;
+            color: #31595b;
+        }
+
+
+        /* ==========================================
+           NAVBAR
+        ========================================== */
+
+        .navbar {
+            height: 48px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 42px;
+
+            border-bottom: 1px solid #eeeeee;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #304f50;
+
+            font-size: 12px;
+            font-weight: 500;
+
+            height: 48px;
+
+            display: flex;
+            align-items: center;
+
+            position: relative;
+        }
+
+        .navbar a i {
+            font-size: 8px;
+            margin-left: 5px;
+        }
+
+        .navbar a.active {
+            font-weight: 700;
+        }
+
+        .navbar a.active::after {
+            content: "";
+
+            position: absolute;
+            bottom: 0;
+            left: 0;
+
+            width: 30px;
+            height: 3px;
+
+            background: #5b9d79;
+            border-radius: 5px;
+        }
+
+
+        /* ==========================================
+           HERO
+        ========================================== */
+
+        .hero {
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(10, 66, 42, .94),
+                    rgba(24, 121, 78, .84)
+                ),
+                url("https://images.unsplash.com/photo-1488459716781-31db52582fe9?auto=format&fit=crop&w=1600&q=80")
+                center/cover;
+
+            min-height: 330px;
+
+            display: flex;
+            align-items: center;
+
+            padding: 50px 6%;
+
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 760px;
+        }
+
+        .hero-label {
+            display: inline-block;
+
+            background: rgba(255,255,255,.15);
+
+            border: 1px solid rgba(255,255,255,.25);
+
+            padding: 7px 13px;
+
+            border-radius: 30px;
+
+            font-size: 13px;
+
+            margin-bottom: 18px;
+        }
+
+        .hero h1 {
+            font-size: clamp(36px, 5vw, 58px);
+            line-height: 1.05;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            color: #e4f5eb;
+            line-height: 1.7;
+            max-width: 650px;
+        }
+
+
+        /* ==========================================
+           HERO SEARCH
+        ========================================== */
+
+        .hero .search-box {
+            margin-top: 28px;
+
+            background: white;
+
+            padding: 8px;
+
+            border-radius: 14px;
+
+            display: flex;
+
+            max-width: 700px;
+
+            box-shadow:
+                0 15px 35px rgba(0,0,0,.15);
+        }
+
+        .hero .search-box input {
+            flex: 1;
+
+            border: none;
+            outline: none;
+
+            padding: 14px;
+
+            font-size: 15px;
+
+            color: var(--dark);
+        }
+
+        .hero .search-box button {
+            border: none;
+
+            background: var(--green);
+
+            color: white;
+
+            padding: 0 24px;
+
+            border-radius: 9px;
+
+            font-weight: 700;
+
+            cursor: pointer;
+        }
+
+
+        /* ==========================================
+           MAIN
+        ========================================== */
+
+        .container {
+            width: min(1180px, 92%);
+            margin: 45px auto;
+        }
+
+        .section-heading {
+            margin-bottom: 22px;
+        }
+
+        .section-heading h2 {
+            font-size: 28px;
+            margin-bottom: 6px;
+        }
+
+        .section-heading p {
+            color: var(--gray);
+            font-size: 14px;
+        }
+
+
+        /* ==========================================
+           FILTERS
+        ========================================== */
+
+        .filters {
+            background: white;
+
+            border: 1px solid var(--border);
+
+            border-radius: 18px;
+
+            padding: 22px;
+
+            box-shadow: var(--shadow);
+
+            margin-bottom: 30px;
+        }
+
+        .filter-grid {
+            display: grid;
+
+            grid-template-columns:
+                1.2fr 1fr 1fr 1fr auto;
+
+            gap: 14px;
+
+            align-items: end;
+        }
+
+        .filter-group label {
+            display: block;
+
+            font-size: 12px;
+
+            color: var(--gray);
+
+            margin-bottom: 7px;
+
+            font-weight: 700;
+        }
+
+        .filter-group select {
+            width: 100%;
+
+            padding: 12px;
+
+            border: 1px solid var(--border);
+
+            border-radius: 9px;
+
+            background: white;
+
+            color: var(--dark);
+
+            outline: none;
+        }
+
+        .filter-group select:focus {
+            border-color: var(--green);
+        }
+
+        .clear-btn {
+            height: 42px;
+
+            padding: 0 18px;
+
+            border: 1px solid #b9cec1;
+
+            background: white;
+
+            border-radius: 9px;
+
+            cursor: pointer;
+
+            color: var(--green);
+
+            font-weight: 700;
+        }
+
+
+        /* ==========================================
+           RESULT BAR
+        ========================================== */
+
+        .result-bar {
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            margin-bottom: 20px;
+        }
+
+        .result-count {
+            font-weight: 700;
+        }
+
+        .location-btn {
+            background: var(--light-green);
+
+            border: 1px solid #cce6d6;
+
+            color: var(--green);
+
+            padding: 10px 15px;
+
+            border-radius: 9px;
+
+            cursor: pointer;
+
+            font-weight: 700;
+        }
+
+
+        /* ==========================================
+           MARKET LAYOUT
+        ========================================== */
+
+        .market-layout {
+            display: grid;
+
+            grid-template-columns:
+                1.5fr 1fr;
+
+            gap: 25px;
+        }
+
+        .market-list {
+            display: grid;
+            gap: 18px;
+        }
+
+
+        /* ==========================================
+           MARKET CARD
+        ========================================== */
+
+        .market-card {
+            background: white;
+
+            border: 1px solid var(--border);
+
+            border-radius: 16px;
+
+            overflow: hidden;
+
+            display: grid;
+
+            grid-template-columns:
+                190px 1fr;
+
+            box-shadow:
+                0 6px 22px rgba(30,70,50,.06);
+
+            transition: .25s;
+        }
+
+        .market-card:hover {
+            transform: translateY(-3px);
+
+            box-shadow: var(--shadow);
+        }
+
+        .market-image {
+            height: 100%;
+
+            min-height: 190px;
+
+            background-size: cover;
+
+            background-position: center;
+        }
+
+        .market-info {
+            padding: 20px;
+        }
+
+        .market-top {
+            display: flex;
+
+            justify-content: space-between;
+
+            gap: 10px;
+        }
+
+        .market-top h3 {
+            font-size: 19px;
+            margin-bottom: 7px;
+        }
+
+        .open {
+            background: #e5f7ec;
+
+            color: #17834e;
+
+            padding: 5px 9px;
+
+            border-radius: 20px;
+
+            font-size: 11px;
+
+            font-weight: 800;
+
+            white-space: nowrap;
+        }
+
+        .closed {
+            background: #fff0f0;
+            color: #c64c4c;
+        }
+
+        .market-location {
+            color: var(--gray);
+
+            font-size: 13px;
+
+            margin-bottom: 12px;
+        }
+
+        .market-description {
+            color: #65736b;
+
+            font-size: 13px;
+
+            line-height: 1.55;
+
+            margin-bottom: 13px;
+        }
+
+        .market-meta {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 7px;
+
+            margin-bottom: 15px;
+        }
+
+        .tag {
+            background: var(--light);
+
+            border: 1px solid var(--border);
+
+            color: #536259;
+
+            padding: 5px 8px;
+
+            border-radius: 6px;
+
+            font-size: 11px;
+        }
+
+        .market-actions {
+            display: flex;
+
+            gap: 9px;
+        }
+
+
+        /* ==========================================
+           DETAILS LINK
+        ========================================== */
+
+        .details-btn {
+            background: var(--green);
+
+            border: none;
+
+            color: white;
+
+            padding: 9px 14px;
+
+            border-radius: 8px;
+
+            cursor: pointer;
+
+            font-weight: 700;
+
+            text-decoration: none;
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+        }
+
+        .details-btn:hover {
+            background: var(--dark-green);
+        }
+
+
+        /* ==========================================
+           MAP BUTTON
+        ========================================== */
+
+        .map-btn {
+            background: white;
+
+            border: 1px solid #bdd0c5;
+
+            color: var(--green);
+
+            padding: 9px 14px;
+
+            border-radius: 8px;
+
+            cursor: pointer;
+
+            font-weight: 700;
+        }
+
+        .map-btn:hover {
+            background: var(--light-green);
+        }
+
+
+        /* ==========================================
+           MAP
+        ========================================== */
+
+        .map-container {
+            background: white;
+
+            border: 1px solid var(--border);
+
+            border-radius: 18px;
+
+            overflow: hidden;
+
+            height: 600px;
+
+            position: sticky;
+
+            top: 95px;
+
+            box-shadow: var(--shadow);
+        }
+
+        .map-header {
+            padding: 16px;
+
+            border-bottom: 1px solid var(--border);
+        }
+
+        .map-header h3 {
+            font-size: 17px;
+            margin-bottom: 4px;
+        }
+
+        .map-header p {
+            font-size: 12px;
+            color: var(--gray);
+        }
+
+        #map {
+            width: 100%;
+
+            height: calc(100% - 76px);
+
+            border: 0;
+        }
+
+
+        /* ==========================================
+           NO RESULTS
+        ========================================== */
+
+        .no-results {
+            display: none;
+
+            background: white;
+
+            padding: 60px 20px;
+
+            text-align: center;
+
+            border-radius: 15px;
+
+            border: 1px solid var(--border);
+        }
+
+        .no-results .icon {
+            font-size: 45px;
+            margin-bottom: 10px;
+        }
+
+        .no-results h3 {
+            margin-bottom: 8px;
+        }
+
+        .no-results p {
+            color: var(--gray);
+        }
+
+
+        /* ==========================================
+           MODAL
+        ========================================== */
+
+        .modal {
+            display: none;
+
+            position: fixed;
+
+            inset: 0;
+
+            background:
+                rgba(10, 30, 20, .6);
+
+            z-index: 1000;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 20px;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-box {
+            background: white;
+
+            width: min(650px, 100%);
+
+            max-height: 90vh;
+
+            overflow-y: auto;
+
+            border-radius: 20px;
+
+            position: relative;
+
+            animation:
+                modalIn .25s ease;
+        }
+
+        @keyframes modalIn {
+
+            from {
+                opacity: 0;
+                transform:
+                    translateY(15px)
+                    scale(.98);
+            }
+
+            to {
+                opacity: 1;
+                transform:
+                    translateY(0)
+                    scale(1);
+            }
+
+        }
+
+        .modal-image {
+            height: 220px;
+
+            background-size: cover;
+
+            background-position: center;
+        }
+
+        .modal-content {
+            padding: 25px;
+        }
+
+        .close-modal {
+            position: absolute;
+
+            right: 15px;
+            top: 15px;
+
+            width: 38px;
+            height: 38px;
+
+            border-radius: 50%;
+
+            border: none;
+
+            background: white;
+
+            box-shadow:
+                0 3px 12px rgba(0,0,0,.15);
+
+            font-size: 22px;
+
+            cursor: pointer;
+        }
+
+        .modal-content h2 {
+            margin-bottom: 8px;
+        }
+
+        .detail-row {
+            display: flex;
+
+            gap: 12px;
+
+            padding: 13px 0;
+
+            border-bottom:
+                1px solid var(--border);
+
+            font-size: 14px;
+        }
+
+        .detail-row strong {
+            min-width: 120px;
+        }
+
+        .produce-list {
+            display: flex;
+
+            gap: 8px;
+
+            flex-wrap: wrap;
+
+            margin-top: 10px;
+        }
+
+
+        /* ==========================================
+           FOOTER
+        ========================================== */
+
+        footer {
+            margin-top: 60px;
+
+            background: #103b29;
+
+            color: #d8e9df;
+
+            padding: 35px 6%;
+
+            text-align: center;
+
+            font-size: 13px;
+        }
+
+
+        /* ==========================================
+           RESPONSIVE
+        ========================================== */
+
+        @media(max-width: 1000px) {
+
+            .filter-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .market-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .map-container {
+                position: relative;
+
+                top: 0;
+
+                height: 400px;
+            }
+
+        }
+
+
+        @media(max-width: 700px) {
+
+            .header {
+                width: 92%;
+
+                flex-wrap: wrap;
+
+                padding: 20px 0;
+            }
+
+            .header .search-box {
+                width: 100%;
+
+                order: 3;
+            }
+
+            .header-right {
+                gap: 12px;
+            }
+
+            .navbar {
+                gap: 15px;
+
+                overflow-x: auto;
+
+                justify-content: flex-start;
+
+                padding: 0 20px;
+            }
+
+            .navbar a {
+                white-space: nowrap;
+            }
+
+            .hero {
+                padding: 45px 5%;
+            }
+
+            .container {
+                width: 92%;
+            }
+
+            .filter-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .market-card {
+                grid-template-columns: 1fr;
+            }
+
+            .market-image {
+                min-height: 180px;
+            }
+
+            .result-bar {
+                align-items: flex-start;
+
+                gap: 12px;
+
+                flex-direction: column;
+            }
+
+            .hero .search-box {
+                flex-direction: column;
+
+                gap: 7px;
+
+                padding: 7px;
+            }
+
+            .hero .search-box button {
+                padding: 13px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ==========================================
+         HEADER
+    ========================================== -->
+
+    <header class="header">
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                🌿
+            </div>
+
+            <div>
+
+                <h2>FreshFind</h2>
+
+                <p>
+                    Fresh Choices. Better Living.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="search-box">
+
+            <span>🔍</span>
+
+            <input
+                type="text"
+                placeholder="Search for products, brands and more..."
+            >
+
+        </div>
+
+
+        <div class="header-right">
+
+            <div class="account">
+
+                <span>
+                    👤
+                </span>
+
+                <span>
+                    Sign in / Register
+                </span>
+
+            </div>
+
+            <span class="cart">
+                🛒
+            </span>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ==========================================
+         NAVBAR
+    ========================================== -->
+
+       <nav class="navbar">
+
+        <a href="fresh find 1.html" class="active">home</a>
+        <a href="find.html">Find a Market</a>
+        <a href="seasonal.html">Seasonal Recommendation</a>
+       
+        
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About us</a>
+
+
+    </nav>
+
+
+
+
+    <!-- ==========================================
+         HERO
+    ========================================== -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <span class="hero-label">
+                🌱 Fresh • Local • Seasonal
+            </span>
+
+            <h1>
+                Find a Market Near You
+            </h1>
+
+            <p>
+                Discover local farmers markets,
+                fresh vegetables, seasonal produce
+                and trusted local sellers near your area.
+            </p>
+
+
+            <div class="search-box">
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search market, area or vegetable..."
+                >
+
+                <button
+                    type="button"
+                    onclick="applyFilters()"
+                >
+                    🔍 Search
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ==========================================
+         MAIN
+    ========================================== -->
+
+    <main
+        class="container"
+        id="marketsSection"
+    >
+
+
+        <div class="section-heading">
+
+            <h2>
+                Market Directory
+            </h2>
+
+            <p>
+                Browse nearby farmers markets
+                and find fresh produce.
+            </p>
+
+        </div>
+
+
+
+        <!-- ======================================
+             FILTERS
+        ====================================== -->
+
+        <div class="filters">
+
+            <div class="filter-grid">
+
+
+                <div class="filter-group">
+
+                    <label>
+                        AREA / NEIGHBORHOOD
+                    </label>
+
+                    <select id="areaFilter">
+
+                        <option value="all">
+                            All Areas
+                        </option>
+
+                        <option value="clifton">
+                            Clifton
+                        </option>
+
+                        <option value="dha">
+                            DHA
+                        </option>
+
+                        <option value="gulshan">
+                            Gulshan
+                        </option>
+
+                        <option value="north-nazimabad">
+                            North Nazimabad
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <div class="filter-group">
+
+                    <label>
+                        DAY
+                    </label>
+
+                    <select id="dayFilter">
+
+                        <option value="all">
+                            Any Day
+                        </option>
+
+                        <option value="monday">
+                            Monday
+                        </option>
+
+                        <option value="tuesday">
+                            Tuesday
+                        </option>
+
+                        <option value="wednesday">
+                            Wednesday
+                        </option>
+
+                        <option value="thursday">
+                            Thursday
+                        </option>
+
+                        <option value="friday">
+                            Friday
+                        </option>
+
+                        <option value="saturday">
+                            Saturday
+                        </option>
+
+                        <option value="sunday">
+                            Sunday
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <div class="filter-group">
+
+                    <label>
+                        PRODUCE
+                    </label>
+
+                    <select id="produceFilter">
+
+                        <option value="all">
+                            All Produce
+                        </option>
+
+                        <option value="vegetables">
+                            Vegetables
+                        </option>
+
+                        <option value="fruits">
+                            Fruits
+                        </option>
+
+                        <option value="organic">
+                            Organic
+                        </option>
+
+                        <option value="herbs">
+                            Herbs
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <div class="filter-group">
+
+                    <label>
+                        SORT BY
+                    </label>
+
+                    <select id="sortFilter">
+
+                        <option value="name">
+                            Alphabetical
+                        </option>
+
+                        <option value="distance">
+                            Proximity
+                        </option>
+
+                        <option value="opening">
+                            Next Open
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <button
+                    class="clear-btn"
+                    onclick="clearFilters()"
+                >
+                    Clear
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ======================================
+             RESULTS
+        ====================================== -->
+
+        <div class="result-bar">
+
+            <div class="result-count">
+
+                Showing
+                <span id="resultCount">0</span>
+                markets
+
+            </div>
+
+
+            <button
+                class="location-btn"
+                onclick="useMyLocation()"
+            >
+                📍 Use My Location
+            </button>
+
+        </div>
+
+
+
+        <!-- ======================================
+             MARKET + MAP
+        ====================================== -->
+
+        <div class="market-layout">
+
+
+            <div>
+
+                <div
+                    class="market-list"
+                    id="marketList"
+                >
+                    <!-- Markets generated by JavaScript -->
+                </div>
+
+
+                <div
+                    class="no-results"
+                    id="noResults"
+                >
+
+                    <div class="icon">
+                        🥕
+                    </div>
+
+                    <h3>
+                        No markets found
+                    </h3>
+
+                    <p>
+                        Try changing your filters
+                        or search for another area.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ==================================
+                 MAP
+            ================================== -->
+
+            <aside class="map-container">
+
+                <div class="map-header">
+
+                    <h3>
+                        🗺️ Market Location
+                    </h3>
+
+                    <p id="mapTitle">
+                        Select a market to view its location.
+                    </p>
+
+                </div>
+
+
+                <iframe
+                    id="map"
+                    src="https://www.google.com/maps?q=Karachi%20Pakistan&output=embed"
+                    loading="lazy"
+                    title="Market Location Map"
+                >
+                </iframe>
+
+            </aside>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- ==========================================
+         DETAIL MODAL
+    ========================================== -->
+
+    <div
+        class="modal"
+        id="marketModal"
+    >
+
+        <div class="modal-box">
+
+
+            <button
+                class="close-modal"
+                onclick="closeModal()"
+            >
+                ×
+            </button>
+
+
+            <div
+                class="modal-image"
+                id="modalImage"
+            >
+            </div>
+
+
+            <div class="modal-content">
+
+                <h2 id="modalTitle">
+                    Market Name
+                </h2>
+
+
+                <p
+                    id="modalDescription"
+                    style="
+                        color:#68756e;
+                        line-height:1.6;
+                        margin-bottom:10px;
+                    "
+                >
+                </p>
+
+
+                <div class="detail-row">
+
+                    <strong>
+                        📍 Location
+                    </strong>
+
+                    <span id="modalLocation">
+                    </span>
+
+                </div>
+
+
+                <div class="detail-row">
+
+                    <strong>
+                        🕐 Schedule
+                    </strong>
+
+                    <span id="modalSchedule">
+                    </span>
+
+                </div>
+
+
+                <div class="detail-row">
+
+                    <strong>
+                        📞 Contact
+                    </strong>
+
+                    <span id="modalPhone">
+                    </span>
+
+                </div>
+
+
+                <div style="margin-top:18px">
+
+                    <strong>
+                        🥕 Available Produce
+                    </strong>
+
+
+                    <div
+                        class="produce-list"
+                        id="modalProduce"
+                    >
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ==========================================
+         FOOTER
+    ========================================== -->
+
+    <footer>
+
+        © 2026 FreshFind Market Directory
+
+        <br>
+        <br>
+
+        Find local markets •
+        Support local farmers •
+        Eat fresh
+
+    </footer>
+
+
+
+    <!-- ==========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script>
+
+
+        /* =========================================
+           MARKET DATA
+        ========================================= */
+
+        const markets = [
+
+            {
+                id: 1,
+
+                name:
+                    "Clifton Fresh Farmers Market",
+
+                area:
+                    "clifton",
+
+                location:
+                    "Clifton Block 5, Karachi",
+
+                days:
+                    ["saturday", "sunday"],
+
+                hours:
+                    "8:00 AM - 2:00 PM",
+
+                produce:
+                    [
+                        "vegetables",
+                        "fruits",
+                        "organic",
+                        "herbs"
+                    ],
+
+                description:
+                    "A community farmers market offering fresh vegetables, seasonal fruits and organic produce from local growers.",
+
+                phone:
+                    "+92 300 1234567",
+
+                distance:
+                    2.4,
+
+                opening:
+                    8,
+
+                image:
+                    "https://images.unsplash.com/photo-1488459716781-31db52582fe9?auto=format&fit=crop&w=800&q=80",
+
+                map:
+                    "Clifton Block 5 Karachi Pakistan",
+
+                /* PAGE LINK */
+                link:
+                    "clifton.html"
+            },
+
+
+            {
+                id: 2,
+
+                name:
+                    "DHA Green Market",
+
+                area:
+                    "dha",
+
+                location:
+                    "DHA Phase 6, Karachi",
+
+                days:
+                    [
+                        "friday",
+                        "saturday",
+                        "sunday"
+                    ],
+
+                hours:
+                    "7:00 AM - 1:00 PM",
+
+                produce:
+                    [
+                        "vegetables",
+                        "organic",
+                        "herbs"
+                    ],
+
+                description:
+                    "Local growers bring farm-fresh vegetables, leafy greens, herbs and organic produce every weekend.",
+
+                phone:
+                    "+92 301 7654321",
+
+                distance:
+                    5.1,
+
+                opening:
+                    7,
+
+                image:
+                    "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=800&q=80",
+
+                map:
+                    "DHA Phase 6 Karachi Pakistan",
+
+                /* PAGE LINK */
+                link:
+                    "dha.html"
+            },
+
+
+            {
+                id: 3,
+
+                name:
+                    "Gulshan Vegetable Bazaar",
+
+                area:
+                    "gulshan",
+
+                location:
+                    "Gulshan-e-Iqbal Block 13, Karachi",
+
+                days:
+                    [
+                        "monday",
+                        "wednesday",
+                        "friday"
+                    ],
+
+                hours:
+                    "6:30 AM - 12:30 PM",
+
+                produce:
+                    [
+                        "vegetables",
+                        "fruits"
+                    ],
+
+                description:
+                    "A convenient neighborhood vegetable market with everyday vegetables and fresh seasonal fruits.",
+
+                phone:
+                    "+92 302 8899001",
+
+                distance:
+                    7.8,
+
+                opening:
+                    6.5,
+
+                image:
+                    "https://images.unsplash.com/photo-1597362925123-77861d3fbac7?auto=format&fit=crop&w=800&q=80",
+
+                map:
+                    "Gulshan-e-Iqbal Karachi Pakistan",
+
+                /* PAGE LINK */
+                link:
+                    "gulshan.html"
+            },
+
+
+            {
+                id: 4,
+
+                name:
+                    "North Nazimabad Organic Market",
+
+                area:
+                    "north-nazimabad",
+
+                location:
+                    "North Nazimabad Block H, Karachi",
+
+                days:
+                    [
+                        "saturday",
+                        "sunday"
+                    ],
+
+                hours:
+                    "9:00 AM - 3:00 PM",
+
+                produce:
+                    [
+                        "organic",
+                        "vegetables",
+                        "fruits",
+                        "herbs"
+                    ],
+
+                description:
+                    "Organic-focused weekend market with fresh vegetables, herbs, fruits and locally sourced products.",
+
+                phone:
+                    "+92 303 4445566",
+
+                distance:
+                    10.2,
+
+                opening:
+                    9,
+
+                image:
+                    "https://images.unsplash.com/photo-1573246123716-6b1782bfc499?auto=format&fit=crop&w=800&q=80",
+
+                map:
+                    "North Nazimabad Karachi Pakistan",
+
+                /* PAGE LINK */
+                link:
+                    "nazimabad.html"
+            }
+
+        ];
+
+
+
+        /* =========================================
+           DOM ELEMENTS
+        ========================================= */
+
+        const marketList =
+            document.getElementById(
+                "marketList"
+            );
+
+        const resultCount =
+            document.getElementById(
+                "resultCount"
+            );
+
+        const noResults =
+            document.getElementById(
+                "noResults"
+            );
+
+        const searchInput =
+            document.getElementById(
+                "searchInput"
+            );
+
+        const areaFilter =
+            document.getElementById(
+                "areaFilter"
+            );
+
+        const dayFilter =
+            document.getElementById(
+                "dayFilter"
+            );
+
+        const produceFilter =
+            document.getElementById(
+                "produceFilter"
+            );
+
+        const sortFilter =
+            document.getElementById(
+                "sortFilter"
+            );
+
+
+
+        /* =========================================
+           RENDER MARKETS
+        ========================================= */
+
+        function renderMarkets(data) {
+
+            marketList.innerHTML = "";
+
+            resultCount.textContent =
+                data.length;
+
+
+            if (data.length === 0) {
+
+                noResults.style.display =
+                    "block";
+
+                return;
+
+            }
+
+
+            noResults.style.display =
+                "none";
+
+
+            data.forEach(market => {
+
+                const card =
+                    document.createElement(
+                        "article"
+                    );
+
+                card.className =
+                    "market-card";
+
+
+                card.innerHTML = `
+
+                    <div
+                        class="market-image"
+                        style="
+                            background-image:
+                            url('${market.image}');
+                        "
+                    >
+                    </div>
+
+
+                    <div class="market-info">
+
+
+                        <div class="market-top">
+
+                            <div>
+
+                                <h3>
+                                    ${market.name}
+                                </h3>
+
+                                <div
+                                    class="market-location"
+                                >
+                                    📍
+                                    ${market.location}
+                                </div>
+
+                            </div>
+
+
+                            <span class="open">
+                                OPEN MARKET
+                            </span>
+
+                        </div>
+
+
+                        <p class="market-description">
+                            ${market.description}
+                        </p>
+
+
+                        <div class="market-meta">
+
+                            <span class="tag">
+                                🕐
+                                ${market.hours}
+                            </span>
+
+                            <span class="tag">
+                                📅
+                                ${market.days.length}
+                                days/week
+                            </span>
+
+                            <span class="tag">
+                                📍
+                                ${market.distance}
+                                km
+                            </span>
+
+                        </div>
+
+
+                        <div class="market-meta">
+
+                            ${market.produce.map(
+                                item =>
+                                `<span class="tag">
+                                    ${formatProduce(item)}
+                                </span>`
+                            ).join("")}
+
+                        </div>
+
+
+                        <div class="market-actions">
+
+
+                            <!-- =================================
+                                 LINK TO SHOP PAGE
+                            ================================== -->
+
+                            <a
+                                href="${market.link}"
+                                class="details-btn"
+                            >
+                                View Details
+                            </a>
+
+
+                            <button
+                                class="map-btn"
+                                onclick="
+                                    showOnMap(${market.id})
+                                "
+                            >
+                                🗺️ Map
+                            </button>
+
+
+                        </div>
+
+                    </div>
+
+                `;
+
+
+                marketList.appendChild(card);
+
+            });
+
+        }
+
+
+
+        /* =========================================
+           PRODUCE FORMATTER
+        ========================================= */
+
+        function formatProduce(type) {
+
+            const names = {
+
+                vegetables:
+                    "🥕 Vegetables",
+
+                fruits:
+                    "🍎 Fruits",
+
+                organic:
+                    "🌱 Organic",
+
+                herbs:
+                    "🌿 Herbs"
+
+            };
+
+
+            return names[type] || type;
+
+        }
+
+
+
+        /* =========================================
+           FILTER + SORT
+        ========================================= */
+
+        function applyFilters() {
+
+            const search =
+                searchInput.value
+                    .toLowerCase()
+                    .trim();
+
+
+            const area =
+                areaFilter.value;
+
+
+            const day =
+                dayFilter.value;
+
+
+            const produce =
+                produceFilter.value;
+
+
+            const sort =
+                sortFilter.value;
+
+
+            let filtered =
+                markets.filter(market => {
+
+
+                    const searchableText =
+                        `
+                        ${market.name}
+                        ${market.location}
+                        ${market.description}
+                        ${market.produce.join(" ")}
+                        `
+                        .toLowerCase();
+
+
+                    const matchesSearch =
+                        searchableText.includes(
+                            search
+                        );
+
+
+                    const matchesArea =
+                        area === "all" ||
+                        market.area === area;
+
+
+                    const matchesDay =
+                        day === "all" ||
+                        market.days.includes(day);
+
+
+                    const matchesProduce =
+                        produce === "all" ||
+                        market.produce.includes(
+                            produce
+                        );
+
+
+                    return (
+                        matchesSearch &&
+                        matchesArea &&
+                        matchesDay &&
+                        matchesProduce
+                    );
+
+                });
+
+
+
+            /* =====================================
+               SORT
+            ===================================== */
+
+            if (sort === "name") {
+
+                filtered.sort(
+                    (a, b) =>
+                        a.name.localeCompare(
+                            b.name
+                        )
+                );
+
+            }
+
+
+            if (sort === "distance") {
+
+                filtered.sort(
+                    (a, b) =>
+                        a.distance -
+                        b.distance
+                );
+
+            }
+
+
+            if (sort === "opening") {
+
+                filtered.sort(
+                    (a, b) =>
+                        a.opening -
+                        b.opening
+                );
+
+            }
+
+
+            renderMarkets(filtered);
+
+        }
+
+
+
+        /* =========================================
+           CLEAR FILTERS
+        ========================================= */
+
+        function clearFilters() {
+
+            searchInput.value = "";
+
+            areaFilter.value =
+                "all";
+
+            dayFilter.value =
+                "all";
+
+            produceFilter.value =
+                "all";
+
+            sortFilter.value =
+                "name";
+
+
+            applyFilters();
+
+        }
+
+
+
+        /* =========================================
+           MAP
+        ========================================= */
+
+        function showOnMap(id) {
+
+            const market =
+                markets.find(
+                    m => m.id === id
+                );
+
+
+            if (!market) return;
+
+
+            const encoded =
+                encodeURIComponent(
+                    market.map
+                );
+
+
+            document.getElementById(
+                "map"
+            ).src =
+                `https://www.google.com/maps?q=${encoded}&output=embed`;
+
+
+            document.getElementById(
+                "mapTitle"
+            ).textContent =
+                market.name;
+
+
+            document
+                .querySelector(
+                    ".map-container"
+                )
+                .scrollIntoView({
+                    behavior: "smooth",
+                    block: "center"
+                });
+
+        }
+
+
+
+        /* =========================================
+           LOCATION
+        ========================================= */
+
+        function useMyLocation() {
+
+            if (!navigator.geolocation) {
+
+                alert(
+                    "Your browser does not support location."
+                );
+
+                return;
+
+            }
+
+
+            navigator.geolocation.getCurrentPosition(
+
+                position => {
+
+                    const userLat =
+                        position.coords.latitude;
+
+                    const userLng =
+                        position.coords.longitude;
+
+
+                    /*
+                        Demo behavior:
+                        The sample market data already
+                        contains distance values.
+                    */
+
+                    markets.sort(
+                        (a, b) =>
+                            a.distance -
+                            b.distance
+                    );
+
+
+                    sortFilter.value =
+                        "distance";
+
+
+                    applyFilters();
+
+
+                    alert(
+                        "Location enabled! Markets are now sorted by proximity."
+                    );
+
+                },
+
+
+                () => {
+
+                    alert(
+                        "Location permission was not granted."
+                    );
+
+                }
+
+            );
+
+        }
+
+
+
+        /* =========================================
+           SCROLL TO MARKETS
+        ========================================= */
+
+        function scrollToMarkets() {
+
+            document
+                .getElementById(
+                    "marketsSection"
+                )
+                .scrollIntoView({
+                    behavior: "smooth"
+                });
+
+        }
+
+
+
+        /* =========================================
+           EVENTS
+        ========================================= */
+
+        searchInput.addEventListener(
+            "input",
+            applyFilters
+        );
+
+
+        areaFilter.addEventListener(
+            "change",
+            applyFilters
+        );
+
+
+        dayFilter.addEventListener(
+            "change",
+            applyFilters
+        );
+
+
+        produceFilter.addEventListener(
+            "change",
+            applyFilters
+        );
+
+
+        sortFilter.addEventListener(
+            "change",
+            applyFilters
+        );
+
+
+
+        /* =========================================
+           INITIAL LOAD
+        ========================================= */
+
+        renderMarkets(markets);
+
+    </script>
+
+
+</body>
+
+</html>

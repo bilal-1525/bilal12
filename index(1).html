@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fresh Finds</title>
+    <link rel="stylesheet" href="style.css" <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+
+
+    <header class="header">
+
+        <div class="logo">
+            <div class="logo-icon">
+                <i class="fa-solid fa-leaf"></i>
+            </div>
+
+            <div>
+                <h2>FreshFind</h2>
+                <p>Fresh Choices. Better Living.</p>
+            </div>
+        </div>
+
+
+        <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" placeholder="Search for products, brands and more...">
+        </div>
+
+
+        <div class="header-right">
+
+            <div class="account">
+                <i class="fa-regular fa-user"></i>
+                <span>Sign in / Register</span>
+            </div>
+
+            <i class="fa-solid fa-cart-shopping cart"></i>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar">
+
+        <a href="index.html" class="active">home</a>
+        <a href="find.html">Find a Market</a>
+        <a href="seasonal.html">Seasonal Recommendation</a>
+       
+        
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About us</a>
+
+
+    </nav>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <span class="welcome">
+                WELCOME TO FRESHFIND
+            </span>
+
+            <h1>
+                Fresh Products.<br>
+                Fresh Perspectives.
+            </h1>
+
+            <p>
+                Discover a wide range of high-quality, everyday essentials
+                at great prices. From fresh groceries to home favorites —
+                FreshFind has it all, just for you.
+            </p>
+
+            <button>
+                Find a Market
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+        </div>
+
+
+        <div class="hero-image">
+
+            <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1000&q=80"
+                alt="Fresh groceries">
+
+            <div class="good-things">
+                Good<br>
+                Things<br>
+                Inside ♡
+            </div>
+
+        </div>
+
+    </section>
+    <title>Explore Fresh & Local</title>
+
+    <link rel="stylesheet" href="cardstyle.css">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    </head>
+
+    <body>
+
+        <section class="fresh-section">
+
+            <!-- Heading -->
+            <div class="section-heading">
+
+                <div class="leaf-logo">
+                    <i class="fa-solid fa-leaf"></i>
+                </div>
+
+                <div>
+                    <h1>Explore Fresh & Local</h1>
+                    <p>
+                        Discover fresh fruits, vegetables and locally sourced
+                        products from trusted sellers near you.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- Cards Container -->
+            <div class="cards-container">
+
+                <!-- Fruit Card -->
+                <div class="card">
+
+                    <img src="1.jpg" alt="Fresh Fruits">
+
+                    <div class="card-content">
+
+                        <div class="title-row">
+
+                            <div class="icon fruit-icon">
+                                <i class="fa-solid fa-apple-whole"></i>
+                            </div>
+
+                            <div>
+                                <h2>Fruits</h2>
+                                <p>Fresh and juicy fruits for a healthier you.</p>
+                            </div>
+
+                        </div>
+
+                        <div class="items">
+                            Apples • Bananas • Mangoes • Oranges<br>
+                            Grapes • Pomegranates • Guava • Watermelon
+                        </div>
+
+                        <button onclick="exploreCategory('Fruits')">
+                            Explore Fruits
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+
+                    </div>
+                </div>
+
+
+                <!-- Vegetable Card -->
+                <div class="card">
+
+                    <img src="2.jpg" alt="Fresh Vegetables">
+
+                    <div class="card-content">
+
+                        <div class="title-row">
+
+                            <div class="icon vegetable-icon">
+                                <i class="fa-solid fa-carrot"></i>
+                            </div>
+
+                            <div>
+                                <h2>Vegetables</h2>
+                                <p>Farm-fresh vegetables, straight from farmers.</p>
+                            </div>
+
+                        </div>
+
+                        <div class="items">
+                            Tomatoes • Potatoes • Onions • Carrots<br>
+                            Spinach • Cauliflower • Cabbage • Cucumber
+                        </div>
+
+                        <button onclick="exploreCategory('Vegetables')">
+                            Explore Vegetables
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+
+                    </div>
+                </div>
+
+
+                <!-- Local Products Card -->
+                <div class="card">
+
+                    <img src="3.jpg" alt="Local Products">
+
+                    <div class="card-content">
+
+                        <div class="title-row">
+
+                            <div class="icon local-icon">
+                                <i class="fa-solid fa-basket-shopping"></i>
+                            </div>
+
+                            <div>
+                                <h2>Local Products</h2>
+                                <p>Support local farmers and get authentic products.</p>
+                            </div>
+
+                        </div>
+
+                        <div class="items">
+                            Honey • Milk • Eggs • Spices<br>
+                            Homemade Pickles • Local Flour • Fresh Bread<br>
+                            Homemade Jams
+                        </div>
+
+                        <button onclick="exploreCategory('Local Products')">
+                            Explore Local
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <script src="script.js"></script>
+
+    </body>
+
+</html>
+</body>
+
+</html>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background: #f5fff5;
+        color: #174d2b;
+    }
+
+
+    .counter-section {
+        min-height: 100vh;
+        padding: 70px 7%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        background:
+            radial-gradient(circle at 10% 20%,
+                rgba(120, 200, 100, 0.15),
+                transparent 25%),
+            radial-gradient(circle at 90% 80%,
+                rgba(100, 190, 100, 0.12),
+                transparent 25%),
+            #f7fff5;
+    }
+
+
+    .logo {
+        font-size: 60px;
+        font-weight: bold;
+        color: #176b35;
+        margin-bottom: 10px;
+    }
+
+    .logo span {
+        color: #55a83d;
+    }
+
+    .tagline {
+        font-size: 20px;
+        color: #245c3a;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+
+    .description {
+        max-width: 650px;
+        text-align: center;
+        line-height: 1.6;
+        color: #527060;
+        margin-bottom: 50px;
+    }
+
+
+    .counter-container {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 25px;
+    }
+
+
+    .counter-card {
+        background: white;
+        border-radius: 25px;
+        padding: 35px 20px;
+        text-align: center;
+        border: 1px solid #d7ead5;
+
+        box-shadow:
+            0 10px 30px rgba(35, 100, 50, 0.10);
+
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .counter-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background: #55a83d;
+    }
+
+    .counter-card:hover {
+        transform: translateY(-12px);
+        box-shadow:
+            0 20px 40px rgba(35, 100, 50, 0.18);
+    }
+
+
+    .icon {
+        width: 105px;
+        height: 105px;
+        margin: 0 auto 20px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 50%;
+        background: #e5f8df;
+
+        transition: all 0.4s ease;
+    }
+
+    .icon i {
+        font-size: 45px;
+        color: #198b3d;
+    }
+
+    .counter-card:hover .icon {
+        transform: scale(1.12) rotate(5deg);
+        background: #d4f2cd;
+    }
+
+
+    .counter {
+        font-size: 48px;
+        font-weight: bold;
+        color: #198b3d;
+        margin-bottom: 8px;
+    }
+
+
+    .counter-card h3 {
+        font-size: 19px;
+        color: #174d2b;
+        margin-bottom: 15px;
+    }
+
+
+    .line {
+        width: 55px;
+        height: 5px;
+        border-radius: 20px;
+        background: #55b96a;
+        margin: auto;
+    }
+
+
+    .card-1 .icon {
+        background: #e1f7d9;
+    }
+
+    .card-2 .icon {
+        background: #fff4d6;
+    }
+
+    .card-2 .icon i {
+        color: #e9a51c;
+    }
+
+    .card-3 .icon {
+        background: #dff7ee;
+    }
+
+    .card-3 .icon i {
+        color: #169b55;
+    }
+
+    .card-4 .icon {
+        background: #ffe9e5;
+    }
+
+    .card-4 .icon i {
+        color: #ed6258;
+    }
+
+
+    @media (max-width: 1000px) {
+        .counter-container {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 600px) {
+        .counter-container {
+            grid-template-columns: 1fr;
+        }
+
+        .logo {
+            font-size: 42px;
+        }
+
+        .tagline {
+            font-size: 17px;
+        }
+
+        .description {
+            font-size: 14px;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+
+    <section class="counter-section">
+
+        <h1 class="logo">
+            Fresh <span>Find</span>
+        </h1>
+
+        <div class="tagline">
+            Fresh Products &nbsp; • &nbsp;
+            Local Farmers &nbsp; • &nbsp;
+            A Healthier You
+        </div>
+
+        <p class="description">
+            Together we support local, bring freshness to your home,
+            and build a healthier tomorrow.
+        </p>
+
+
+        <div class="counter-container">
+
+
+            <div class="counter-card card-1">
+
+                <div class="icon">
+                    <i class="fa-solid fa-basket-shopping"></i>
+                </div>
+
+                <div class="counter" data-target="500">
+                    0
+                </div>
+
+                <h3>Fresh Products</h3>
+
+                <div class="line"></div>
+
+            </div>
+
+
+
+            <div class="counter-card card-2">
+
+                <div class="icon">
+                    <i class="fa-solid fa-store"></i>
+                </div>
+
+                <div class="counter" data-target="120">
+                    0
+                </div>
+
+                <h3>Local Vendors</h3>
+
+                <div class="line"></div>
+
+            </div>
+
+
+
+            <div class="counter-card card-3">
+
+                <div class="icon">
+                    <i class="fa-solid fa-users"></i>
+                </div>
+
+                <div class="counter" data-target="2500">
+                    0
+                </div>
+
+                <h3>Happy Customers</h3>
+
+                <div class="line"></div>
+
+            </div>
+
+
+
+            <div class="counter-card card-4">
+
+                <div class="icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+
+                <div class="counter" data-target="50">
+                    0
+                </div>
+
+                <h3>Local Markets</h3>
+
+                <div class="line"></div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <script>
+
+        const counters = document.querySelectorAll(".counter");
+
+        let started = false;
+
+        function startCounters() {
+
+            if (started) return;
+
+            started = true;
+
+            counters.forEach(counter => {
+
+                const target = Number(counter.dataset.target);
+                let current = 0;
+
+                const duration = 2000;
+                const intervalTime = 20;
+                const increment =
+                    target / (duration / intervalTime);
+
+                const updateCounter = () => {
+
+                    current += increment;
+
+                    if (current < target) {
+
+                        counter.textContent =
+                            Math.floor(current);
+
+                        setTimeout(updateCounter, intervalTime);
+
+                    } else {
+
+                        counter.textContent =
+                            target.toLocaleString() + "+";
+
+                    }
+                };
+
+                updateCounter();
+
+            });
+        }
+
+
+
+
+        const section =
+            document.querySelector(".counter-section");
+
+        const observer =
+            new IntersectionObserver(
+                (entries) => {
+
+                    entries.forEach(entry => {
+
+                        if (entry.isIntersecting) {
+
+                            startCounters();
+
+                            observer.unobserve(entry.target);
+
+                        }
+
+                    });
+
+                },
+                {
+                    threshold: 0.3
+                }
+            );
+
+
+        observer.observe(section);
+
+    </script>
+    <footer class="fresh-footer">
+
+
+        <div class="footer-wave"></div>
+
+        <div class="footer-container">
+
+
+            <div class="footer-column brand-column">
+
+                <h2 class="footer-logo">
+                    Fresh <span>Find</span>
+                </h2>
+
+                <p class="footer-tagline">
+                    Fresh • Local • Healthy
+                </p>
+
+                <p class="footer-description">
+                    Your trusted platform for fresh produce,
+                    local farmers and healthy living.
+                    Support local. Eat fresh. Live better.
+                </p>
+
+                <div class="social-icons">
+
+                    <a href="#" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+
+                    <a href="#" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a href="#" aria-label="Twitter">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+
+                    <a href="#" aria-label="YouTube">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="footer-column">
+
+                <h3>Quick Links</h3>
+
+                <ul>
+                    <li>
+                        <a href="#">
+                            <i class="fa-solid fa-angle-right"></i>
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <i class="fa-solid fa-angle-right"></i>
+                            Find a Market
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <i class="fa-solid fa-angle-right"></i>
+                            Market Directory
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <i class="fa-solid fa-angle-right"></i>
+                            Seasonal Recommendation
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <i class="fa-solid fa-angle-right"></i>
+                            Product Guide
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <i class="fa-solid fa-angle-right"></i>
+                            Chat bot
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <i class="fa-solid fa-angle-right"></i>
+                            contact
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <i class="fa-solid fa-angle-right"></i>
+                            About_us
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+
+
+
+            <div class="footer-column">
+
+                <h3>Categories</h3>
+
+                <ul>
+
+                    <li>
+                        <a href="#">
+                            <i class="fa-solid fa-leaf"></i>
+                            Fruits
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <i class="fa-solid fa-leaf"></i>
+                            Vegetables
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <i class="fa-solid fa-leaf"></i>
+                            Dairy & Eggs
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <i class="fa-solid fa-leaf"></i>
+                            Local Products
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <i class="fa-solid fa-leaf"></i>
+                            Organic Items
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <i class="fa-solid fa-leaf"></i>
+                            Seasonal Specials
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+
+            <div class="footer-column">
+
+                <h3>Contact Us</h3>
+
+                <div class="contact-item">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    <p>
+                        123 Green Lane,<br>
+                        Lahore, Pakistan
+                    </p>
+
+                </div>
+
+                <div class="contact-item">
+
+                    <i class="fa-solid fa-phone"></i>
+
+                    <p>
+                        +92 300 1234567
+                    </p>
+
+                </div>
+
+                <div class="contact-item">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                    <p>
+                        info@freshfind.pk
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="footer-column newsletter">
+
+                <h3>Stay Connected</h3>
+
+                <p>
+                    Get the latest updates, offers and fresh
+                    deals straight to your inbox.
+                </p>
+
+                <form id="newsletterForm">
+
+                    <div class="email-box">
+
+                        <input type="email" id="email" placeholder="Enter your email" required>
+
+                        <button type="submit">
+                            <i class="fa-solid fa-envelope"></i>
+                        </button>
+
+                    </div>
+
+                    <button class="subscribe-btn" type="submit">
+                        Subscribe
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+        <div class="footer-bottom">
+
+            <p>
+                © 2025 Fresh Find. All rights reserved.
+            </p>
+
+            <p>
+                Freshness from our farms to your home
+                <span>♥</span>
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <script>
+
+        const newsletterForm =
+            document.getElementById("newsletterForm");
+
+        newsletterForm.addEventListener("submit", function (event) {
+
+            event.preventDefault();
+
+            const email =
+                document.getElementById("email").value;
+
+            if (email) {
+
+                alert(
+                    "Thank you for subscribing to Fresh Find!"
+                );
+
+                newsletterForm.reset();
+
+            }
+
+        });
+
+    </script>
+    <script src="chatbot.js"></script>
+
+</body>
+
+</html>

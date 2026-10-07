@@ -1,0 +1,482 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #ffffff;
+    color: #173f43;
+}
+
+
+/* ================= HEADER ================= */
+
+.header {
+    width: 90%;
+    max-width: 1250px;
+    margin: auto;
+
+    min-height: 105px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+
+/* LOGO */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 230px;
+}
+
+.logo-icon {
+    color: #4c9a70;
+    font-size: 35px;
+    transform: rotate(-15deg);
+}
+
+.logo h2 {
+    font-size: 29px;
+    line-height: 1;
+    color: #24525a;
+}
+
+.logo p {
+    font-size: 9px;
+    color: #6d8585;
+    margin-top: 5px;
+}
+
+
+/* SEARCH */
+
+.search-box {
+    width: 390px;
+    height: 45px;
+
+    border: 1px solid #d9dfdd;
+    border-radius: 30px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 18px;
+
+    color: #78908e;
+}
+
+.search-box i {
+    margin-right: 10px;
+}
+
+.search-box input {
+    width: 100%;
+    border: none;
+    outline: none;
+
+    font-family: inherit;
+    font-size: 12px;
+}
+
+
+/* HEADER RIGHT */
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.account {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    font-size: 11px;
+    color: #34595a;
+}
+
+.cart {
+    font-size: 21px;
+    color: #31595b;
+}
+
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 42px;
+
+    border-bottom: 1px solid #eeeeee;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #304f50;
+
+    font-size: 12px;
+    font-weight: 500;
+
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+
+    position: relative;
+}
+
+.navbar a i {
+    font-size: 8px;
+    margin-left: 5px;
+}
+
+.navbar a.active {
+    font-weight: 700;
+}
+
+.navbar a.active::after {
+    content: "";
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 30px;
+    height: 3px;
+
+    background: #5b9d79;
+    border-radius: 5px;
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+    width: 86%;
+    max-width: 1250px;
+
+    min-height: 330px;
+
+    margin: 20px auto 25px;
+
+    display: flex;
+
+    overflow: hidden;
+
+    border-radius: 2px;
+
+    background: #edf5ef;
+}
+
+
+/* HERO CONTENT */
+
+.hero-content {
+    width: 48%;
+
+    padding: 55px 35px 40px 45px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #f0f7f1 0%,
+            #eef6ef 75%,
+            transparent 100%
+        );
+}
+
+.welcome {
+    font-size: 11px;
+    letter-spacing: 3px;
+
+    color: #4d7772;
+
+    font-weight: 700;
+}
+
+.hero h1 {
+    font-size: 39px;
+    line-height: 1.12;
+
+    color: #173f43;
+
+    margin: 12px 0;
+}
+
+.hero-content p {
+    color: #667878;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+
+    max-width: 450px;
+}
+
+
+.hero button {
+    border: none;
+
+    margin-top: 20px;
+
+    padding: 12px 23px;
+
+    border-radius: 25px;
+
+    background: #3f9b78;
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 12px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.hero button:hover {
+    background: #287b5c;
+}
+
+.hero button i {
+    margin-left: 12px;
+}
+
+
+/* HERO IMAGE */
+
+.hero-image {
+    width: 52%;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+
+/* GOOD THINGS */
+
+.good-things {
+    position: absolute;
+
+    right: 25px;
+    top: 70px;
+
+    font-family: cursive;
+
+    color: #345b41;
+
+    font-size: 18px;
+
+    transform: rotate(-7deg);
+}
+
+
+/* ================= CATEGORIES ================= */
+
+.categories {
+    width: 88%;
+    max-width: 1200px;
+
+    margin: 0 auto 35px;
+
+    display: grid;
+
+    grid-template-columns: repeat(6, 1fr);
+
+    gap: 20px;
+
+    text-align: center;
+}
+
+.category {
+    padding: 5px;
+}
+
+.category-icon {
+    width: 65px;
+    height: 65px;
+
+    margin: auto;
+
+    border-radius: 50%;
+
+    background: #f1f8f5;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #5b9d88;
+
+    font-size: 23px;
+}
+
+.category h3 {
+    margin-top: 12px;
+
+    font-size: 11px;
+
+    color: #365b5b;
+}
+
+.category p {
+    margin-top: 5px;
+
+    font-size: 9px;
+
+    color: #9ba8a5;
+}
+
+
+/* ================= FEATURES ================= */
+
+.features {
+    width: 88%;
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 25px;
+
+    border-top: 1px solid #eeeeee;
+
+    padding-top: 20px;
+}
+
+.feature {
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+}
+
+.feature > i {
+    font-size: 23px;
+
+    color: #76aa96;
+}
+
+.feature h4 {
+    font-size: 10px;
+
+    color: #4d6665;
+}
+
+.feature p {
+    font-size: 8px;
+
+    color: #9ca8a6;
+
+    margin-top: 3px;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+
+    .header {
+        flex-wrap: wrap;
+        padding: 20px 0;
+    }
+
+    .search-box {
+        order: 3;
+        width: 100%;
+    }
+
+    .navbar {
+        gap: 18px;
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding: 0 20px;
+    }
+
+    .hero {
+        width: 94%;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .categories {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .features {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .header {
+        width: 94%;
+    }
+
+    .logo h2 {
+        font-size: 23px;
+    }
+
+    .account span {
+        display: none;
+    }
+
+    .hero {
+        flex-direction: column;
+    }
+
+    .hero-content {
+        width: 100%;
+        padding: 40px 25px;
+    }
+
+    .hero-image {
+        width: 100%;
+        height: 250px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .categories {
+        grid-template-columns: repeat(2, 1fr);
+        width: 94%;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+        width: 94%;
+    }
+}
